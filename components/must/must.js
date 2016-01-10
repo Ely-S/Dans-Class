@@ -74,7 +74,7 @@
         }
       },
       supportsWebsockets = function() {
-        return window.WebSocket || window.MozWebSocket;
+        return false;//window.WebSocket || window.MozWebSocket;
       };
 
     if (supportsWebsockets()) {
@@ -124,9 +124,9 @@
               }
             }
           };
-          mu.Loader.defer(function () {
+//          mu.Loader.defer(function () {
             successCallback();
-          });
+//          });
       }
       return {
         stop: function() {

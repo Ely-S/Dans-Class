@@ -28,11 +28,13 @@ jQuery(function($){
   var data = [];
 
   var draw = function(data){
-    circles.data(data).enter().append("circle")
+    var c = circles.data(data);
+    c.enter().append("circle")
       .attr("cy", function(d){ return d[1] })
       .attr("cx", function(d) { return d[0] })
-      .style("fill", "red")
+      .style("fill", "rgba(255,56, 59, 0.25)")
       .attr("r", 3)
+    c.exit().remove();
   };
 
   rsvps.filter(function(rsvp){
